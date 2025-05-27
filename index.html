@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Personal Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="pfp.jpg" alt="Profile Picture" class="profile-pic">
+            <h1>Frank Castle</h1>
+            <p class="tagline">Web Developer | Designer</p>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2 class="section-title">About Me</h2>
+        <p>I am Frank Castle, a passionate and dedicated web developer with a strong focus on creating engaging and user-friendly web experiences. My expertise spans front-end development with clean and efficient code. I'm always eager to learn new technologies.</p>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skill-list">
+            <div class="skill">
+                <span>HTML5</span>
+                <div class="skill-bar html5"></div>
+            </div>
+            <div class="skill">
+                <span>CSS3</span>
+                <div class="skill-bar css3"></div>
+            </div>
+            <div class="skill">
+                <span>JavaScript</span>
+                <div class="skill-bar javascript"></div>
+            </div>
+            <div class="skill">
+                <span>React.js</span>
+                <div class="skill-bar reactjs"></div>
+            </div>
+            <div class="skill">
+                <span>PHP</span>
+                <div class="skill-bar php"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2 class="section-title">My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Project 1: Weather Forecasting Web App</h3>
+                <img src="weather.webp" alt="Weather App Screenshot">
+                <p>A sleek and intuitive web application providing real-time weather updates and forecasts, integrated with a public weather API. Features include location-based search and daily weather trends.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Project 2: Interactive Quiz Platform</h3>
+                <img src="Quiz-App-01.png" alt="Quiz App Screenshot">
+                <p>A dynamic and engaging online quiz platform built for various categories, featuring a scoring system, timer, and immediate feedback for users.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Project 3: To-Do List Application</h3>
+                <img src="finished-todo-list.gif" alt="To-Do List App GIF">
+                <p>A classic and highly functional to-do list application, allowing users to add, delete, and mark tasks as complete. Built with local storage for persistent data.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Project 4: Recipe Blog Template</h3>
+                <img src="recipe.webp" alt="Recipe Blog Screenshot">
+                <p>A beautifully designed static blog template tailored for food bloggers, featuring responsive layouts, recipe card components, and clear navigation for easy Browse.</p>
+                <a href="#">View Project</a>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <p>I'm always open to new opportunities. You can reach out to me at the links mentioned below</p>
+        <div class="contact-links">
+            <p>Email: <a href="mailto:frankcastle@example.com">frankcastle@example.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/frankcastle" target="_blank">linkedin.com/frankcastle</a></p>
+            <p>GitHub: <a href="https://github.com/frankcastle" target="_blank">github.com/frankcastle</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Frank Castle. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
+
+        const animateNavLinks = () => {
+            navLinks.forEach((link, index) => {
+                link.style.animation = link.style.animation ? '' : `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            });
+        };
+
+        const toggleNav = () => {
+            nav.classList.toggle('nav-active');
+            animateNavLinks();
+            burger.classList.toggle('toggle');
+        };
+
+        burger.addEventListener('click', toggleNav);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav.classList.contains('nav-active')) {
+                    toggleNav();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
